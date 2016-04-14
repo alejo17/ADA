@@ -83,7 +83,7 @@ int main(){
 	A.push_back(3);
 
 	//cout<<add_multiply_divide(2,5);
-	cout<<findMS(A,0,0)<<endl; // ***********g++ -std=c++11 findMS.cpp 
+	cout<<findMS(A,0,A.size()-1)<<endl; // ***********g++ -std=c++11 findMS.cpp 
 
 
 	return 0;	
