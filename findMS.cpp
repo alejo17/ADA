@@ -11,7 +11,8 @@
 #include "boost/tuple/tuple_io.hpp"
 using namespace std;
 
-::boost::tuple<int, int, int> findMCS(vector<int> A, int low, int mid, int high){
+//::boost::tuple<int, int, int> 
+int findMCS(vector<int> A, int low, int mid, int high){
 	int leftS = INT_MIN, maxL, maxR;
 	int sum = 0;
 	for(int i = mid; i >= low; i--){
@@ -32,17 +33,20 @@ using namespace std;
 	}
 	//cout<<"max-left = "<<maxL<<" max-right = "<<maxR<<endl;
 
-	return boost::make_tuple(maxL,maxR,leftS + rightS);
+	//return boost::make_tuple(maxL,maxR,leftS + rightS);
+	return leftS+rightS;
+}	
 
-}
-
-
-::boost::tuple<int, int, int> findMS(vector<int> A, int low, int high){
-	if (high==low)
-		return boost::make_tuple(low,high,A[low]);
+int maxx(int a, int b, int c) { return max(max(a, b), c); }
+ 
+//::boost::tuple<int, int, int> 
+int findMS(vector<int> A, int low, int high){
+	if (low==high)
+		return A[low];
+	//	return boost::make_tuple(low,high,A[low]);
 
 	int mid = (low + high)/2;
-	int leftL, leftH, leftS;
+	/*int leftL, leftH, leftS;
 	int rightL, rightH, rightS;
 	int crossL, crossH, crossS;
 
@@ -60,10 +64,10 @@ using namespace std;
 			return boost::make_tuple(crossL,crossH,crossS);
 		}
 		
-	}
-	/*return findMS(A, low, mid),
-              findMS(A, mid+1, high),
-              findMCS(A, low, mid, high));*/
+	}*/
+	return maxx(findMS(A, low, mid),
+              	findMS(A, mid+1, high),
+              	findMCS(A, low, mid, high));
 
 }
 
@@ -73,14 +77,14 @@ using namespace std;
 
 int main(){
 	vector<int> A;
-	A.push_back(21);
-	A.push_back(14);
-	A.push_back(2);
-	A.push_back(1);
-	A.push_back(4);
-	A.push_back(5);
-	A.push_back(7);
-	A.push_back(3);
+	A.push_back(-21);
+	A.push_back(-14);
+	A.push_back(-2);
+	//A.push_back(-1);
+	A.push_back(-4);
+	A.push_back(-5);
+	A.push_back(-7);
+	A.push_back(-3);
 
 	//cout<<add_multiply_divide(2,5);
 	cout<<findMS(A,0,A.size()-1)<<endl; // ***********g++ -std=c++11 findMS.cpp 
