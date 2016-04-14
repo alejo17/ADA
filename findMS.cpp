@@ -50,12 +50,15 @@ using namespace std;
 		boost::make_tuple(leftL,leftH,leftS)=findMS(A,low,mid);
 		boost::make_tuple(rightL,rightH,rightS)=findMS(A,mid + 1,high);
 		boost::make_tuple(crossL,crossH,crossS)=findMCS(A,low,mid,high);
-		if ((leftS >= rightS) && (leftS >= crossS))
+		if ((leftS >= rightS) && (leftS >= crossS)){
 			return boost::make_tuple(leftL,leftH,leftS);
-		if ((rightS >= leftS) && (rightS >= crossS))
+		}
+		if ((rightS >= leftS) && (rightS >= crossS)){
 			return boost::make_tuple(rightL,rightH,rightS);
-		else
+		}
+		else{
 			return boost::make_tuple(crossL,crossH,crossS);
+		}
 		
 	}
 	/*return findMS(A, low, mid),
@@ -80,7 +83,7 @@ int main(){
 	A.push_back(3);
 
 	//cout<<add_multiply_divide(2,5);
-	cout<<findMS(A,0,A.size()-1)<<endl; // ***********g++ -std=c++11 findMS.cpp 
+	cout<<findMS(A,0,0)<<endl; // ***********g++ -std=c++11 findMS.cpp 
 
 
 	return 0;	
