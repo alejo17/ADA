@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1399051387 source:c:\users\usuario\desktop\btree\main.cpp
+	<iostream>
+	"node.h"
+	"tree.h"
+
+1399051156 c:\users\usuario\desktop\btree\node.h
+
+1399052837 c:\users\usuario\desktop\btree\tree.h
+	"node.h"
+	<iostream>
+
+1431528719 source:c:\users\usuario\documents\aed\btree\main.cpp
+	<iostream>
+	"tree.h"
+
+1399051156 c:\users\usuario\documents\aed\btree\node.h
+
+1430927600 c:\users\usuario\documents\aed\btree\tree.h
+	"node.h"
+	<iostream>
+
