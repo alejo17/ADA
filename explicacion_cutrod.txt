@@ -1,0 +1,9 @@
+- Memoized Cut Rod solo da como resultado el valor optimo pero no los cortes optimos
+- Es por eso que el top down y el bottom up tienen un tiempo de ejecucion O(n^2)
+- El bottom up usa bucles anidados desde 0 cortes hasta n cortes
+- Mezclando el topdown y el memoized cut rod, deducimos que es la mejor respuesta, 
+	ya que resuelve cada subproblemas solo una vez, cada uno teniendo un tamano desde
+	0 hasta n.
+- Para resolver un subproblema de tamano n, el buble itera n veces, es decir, sobre todas
+	las llamadas recursivas, el total de iteraciones solo sera n, concluyendo y teniendo
+	un tiempo de ejecucion O(n)
